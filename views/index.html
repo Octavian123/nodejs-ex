@@ -6,17 +6,39 @@
   <title>Calculator</title>
 
 	<script language="javascript">
-		function fadd()
+		function adunare()
 		{
-			var first,sec,res;
-			//Take the value of first textbox and convert it to float
-			first=parseFloat(document.forms[0].txt1st.value);
-			//Take the value of second textbox and convert it to float
-			sec=parseFloat(document.forms[0].txt2nd.value);
-			res=first+sec;
-			//show the result in alertbox
-			//alert("the result"+res);
-			//show the result in the result textbox
+			var nr1,nr2,res;
+			nr1=parseFloat(document.forms[0].txt1st.value);
+			nr2=parseFloat(document.forms[0].txt2nd.value);
+			res=nr1+nr2;
+			document.forms[0].txtresult.value=res;
+		}
+
+		function scadere()
+		{
+			var nr1,nr2,res;
+			nr1=parseFloat(document.forms[0].txt1st.value);
+			nr2=parseFloat(document.forms[0].txt2nd.value);
+			res=nr1-nr2;
+			document.forms[0].txtresult.value=res;
+		}
+
+		function inmultire()
+		{
+			var nr1,nr2,res;
+			nr1=parseFloat(document.forms[0].txt1st.value);
+			nr2=parseFloat(document.forms[0].txt2nd.value);
+			res=nr1*nr2;
+			document.forms[0].txtresult.value=res;
+		}
+
+		function impartire()
+		{
+			var nr1,nr2,res;
+			nr1=parseFloat(document.forms[0].txt1st.value);
+			nr2=parseFloat(document.forms[0].txt2nd.value);
+			res=nr1/nr2;
 			document.forms[0].txtresult.value=res;
 		}
 	</script>
@@ -25,41 +47,50 @@
 <body>
 
 <form name="cal" method="post" action="">
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="19%"><div align="left">Nr. 1
-
-</div></td>
-<td width="81%"><input name="txt1st" type="text" id="txt1st"></td>
-</tr>
-<tr>
-<td><div align="left">Nr. 2 
-
-</div></td>
-<td><input name="txt2nd" type="text" id="txt2nd"></td>
-</tr>
-<tr>
-<td height="28"><div align="left">
-
-</div></td>
-<td height="28">
-	<input name="btnadd" type="button" id="btnadd" value="+" onclick="fadd()">
-	<input name="btnadd" type="button" id="btnadd" value="--" onclick="scadere()">
-</td>
-</tr>
-<tr>
-<td height="21"> <div align="left">= </div></td>
-<td height="21">
-	<input name="txtresult" type="text" id="txtresult">
-</td>
-</tr>
-<tr>
-<td colspan="2">&nbsp; </td>
-</tr>
-<tr>
-<td colspan="2">&nbsp;</td>
-</tr>
-</table>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="19%" height="28">
+				<div align="left">
+					Nr. 1 :
+				</div>
+			</td>
+			<td width="81%">
+				<input name="txt1st" type="text" id="txt1st">
+			</td>
+		</tr>
+		<tr>
+			<td height="28">
+				<div align="left">
+					Nr. 2 :
+				</div>
+			</td>
+			<td>
+				<input name="txt2nd" type="text" id="txt2nd">
+			</td>
+		</tr>
+		<tr>
+			<td height="28">
+				<div align="left">
+				</div>
+			</td>
+			<td height="28">
+				<input name="btnadd" type="button" id="btnadd" value="+" onclick="adunare()">
+				<input name="btnadd" type="button" id="btnadd" value="-" onclick="scadere()">
+				<input name="btnadd" type="button" id="btnadd" value="*" onclick="inmultire()">
+				<input name="btnadd" type="button" id="btnadd" value="/" onclick="impartire()">
+			</td>
+		</tr>
+		<tr>
+			<td height="28"> 
+				<div align="left">
+					= 
+				</div>
+			</td>
+			<td height="21">
+				<input name="txtresult" type="text" id="txtresult">
+			</td>
+		</tr>
+	</table>
 </form>
 
 </body>
